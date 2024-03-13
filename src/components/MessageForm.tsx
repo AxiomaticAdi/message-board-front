@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { messageService } from "../services/messageService";
 
 // Assuming the Message type is defined elsewhere, based on the provided structure
 export type Message = {
@@ -8,7 +9,11 @@ export type Message = {
 	content: string;
 };
 
-const MessageForm: React.FC = () => {
+interface MessageFormProps {
+	setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
+}
+
+const MessageForm = ({ setMessages }: MessageFormProps) => {
 	// State for form fields
 	const [username, setUsername] = useState("");
 	const [content, setContent] = useState("");
@@ -33,7 +38,7 @@ const MessageForm: React.FC = () => {
 		console.log("Submitting message:", message);
 
 		// TO DO: Send the message to the server
-		await fetch("http://localhost:3000/api/messages", {
+		await fetch("https://message-board-back.onrender.com/api/messages", {
 			method: "POST",
 			body: JSON.stringify(message),
 			headers: { "Content-Type": "application/json" },
@@ -42,6 +47,10 @@ const MessageForm: React.FC = () => {
 		// Clear the form fields
 		setUsername("");
 		setContent("");
+
+		// Refresh the chat messages
+		const messagesArray = await messageService.fetchMessages();
+		setMessages(messagesArray);
 	};
 
 	return (
