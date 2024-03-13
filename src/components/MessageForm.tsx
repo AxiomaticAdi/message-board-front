@@ -17,6 +17,11 @@ const MessageForm: React.FC = () => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault(); // Prevent default form submission behavior
 
+		if (!username || !content) {
+			alert("Missing required field!");
+			return;
+		}
+
 		// Create the message object
 		const message: Message = {
 			id: Date.now(), // Simple way to generate a unique id based on timestamp
