@@ -10,7 +10,7 @@ export type Message = {
 };
 
 interface MessageFormProps {
-	setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
+	setMessages: React.Dispatch<React.SetStateAction<Message[] | undefined>>;
 }
 
 const MessageForm = ({ setMessages }: MessageFormProps) => {

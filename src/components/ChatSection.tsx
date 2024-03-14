@@ -1,23 +1,11 @@
-import React, { useEffect } from "react";
 import { Message } from "../types";
 import MessageBubble from "./MessageBubble";
-import { messageService } from "../services/messageService";
 
 interface ChatSectionProps {
 	messages: Message[];
-	setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
 }
 
-const ChatSection = ({ messages, setMessages }: ChatSectionProps) => {
-	useEffect(() => {
-		const initFetchMessages = async () => {
-			const messagesArray = await messageService.fetchMessages();
-			setMessages(messagesArray);
-		};
-
-		initFetchMessages();
-	}, []);
-
+const ChatSection = ({ messages }: ChatSectionProps) => {
 	return (
 		<div>
 			<h1 className="text-3xl">Messages</h1>
