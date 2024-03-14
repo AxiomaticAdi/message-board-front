@@ -17,7 +17,8 @@ const LoadingExplainer: React.FC = () => {
 				>
 					Render
 				</a>
-				. Please allow up to 1 minute for the server to wake up.
+				. Please allow up to 1 minute for the server to wake up. Server will
+				return to sleep after 15 minutes of inactivity.
 			</p>
 		</div>
 	);
