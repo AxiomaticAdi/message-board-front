@@ -58,4 +58,4 @@ The backend part of the Message Board project is in a separate repository. You c
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use and modify the code as per the terms of the license.
 
-Thank you for checking out the Message Board Frontend project! If you have any questions or suggestions, please don't hesitate to reach out. Happy coding!
+Thank you for checking out the Message Board project! If you have any questions or suggestions, please don't hesitate to reach out. Happy coding!
