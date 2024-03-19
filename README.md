@@ -2,6 +2,8 @@
 
 Welcome to the Message Board Frontend repository! This repository contains the frontend code for the Message Board project, where users can post messages and view all historical messages.
 
+[![Live Preview](https://img.shields.io/badge/Live%20Preview-Visit%20Website-blue?style=for-the-badge&logo=github)](https://axiomaticadi.github.io/message-board-front/)
+
 ## Project Overview
 
 The Message Board project is a full-stack application that consists of two separate repositories:
